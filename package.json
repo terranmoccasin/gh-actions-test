@@ -1,5 +1,5 @@
 {
-  "name": "@tmoc-labs/gh-actions-test",
+  "name": "@tmoc/gh-actions-test",
   "private": true,
   "version": "0.0.1",
   "license": "MIT",
