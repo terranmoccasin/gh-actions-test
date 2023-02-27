@@ -1,4 +1,4 @@
-name: Docker build
+name: Build
 
 "on":
   push:
@@ -17,3 +17,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 2
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Build
+        env:
+          SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
+        run: |
+          npm run build
