@@ -23,7 +23,7 @@ jobs:
           node-version: 16
       - name: Install
         run: |
-          npm install
+          yarn install
       - name: Build
         env:
           SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
