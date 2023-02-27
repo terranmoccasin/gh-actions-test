@@ -8,16 +8,12 @@ name: Build
 
 jobs:
   build-tokenlist:
+    environment: mainnet
     runs-on: ubuntu-latest
-    env:
-      SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
     permissions:
       id-token: write
       contents: read
     steps:
-      - name: Secret Check
-        if: ${{ env.SOLANA_NETWORK != '' }}
-        run: echo 'solana_network has been set'
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -30,5 +26,7 @@ jobs:
         run: |
           yarn install
       - name: Build
+        env:
+          SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
         run: |
           yarn build
