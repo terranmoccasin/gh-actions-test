@@ -1,15 +1,18 @@
 {
   "name": "@tmoc/gh-actions-test",
-  "private": true,
   "version": "0.0.1",
   "license": "MIT",
   "main": "dist/generated/index.js",
   "dependencies": {
-    "mz": "^2.7.0"
+    "@orca-so/token-sdk": "^0.1.2",
+    "@solana/web3.js": "^1.73.3",
+    "mz": "^2.7.0",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@types/mz": "^2.7.4",
+    "@types/yargs": "^16.0.1",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "eslint-config-prettier": "^8.3.0",
@@ -20,6 +23,9 @@
     "typescript": "^4.5.5"
   },
   "scripts": {
+    "clean": "rm -rf dist && rm -rf ./src/generated",
+    "generate": "ts-node ./src/generate.ts --mintlistsDir=./src/mintlists --outDir=./src/generated --overridesPath=./src/metadata-overrides.json",
+    "prebuild": "npm run clean && npm run generate",
     "build": "tsc -b"
   }
 }
