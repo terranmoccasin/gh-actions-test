@@ -28,4 +28,4 @@ jobs:
         env:
           SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
         run: |
-          npm run build
+          SOLANA_NETWORK=${{ env.SOLANA_NETWORK }} yarn build
