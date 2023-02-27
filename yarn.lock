@@ -1101,10 +1101,10 @@
     decimal.js "^10.3.1"
     tiny-invariant "^1.2.0"
 
-"@orca-so/token-sdk@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@orca-so/token-sdk/-/token-sdk-0.1.3.tgz#83945fcc19eeaabe9e9bdaebfebba1c9bb17ca42"
-  integrity sha512-2KpxzYyXpf7uS0sbJWVHsW/rSkFYi7gqNYYBWqNCamhmtbpOJSXHtcsSTZsC5dSMPP+Y1za2mxnbcZp1lGRfjw==
+"@orca-so/token-sdk@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@orca-so/token-sdk/-/token-sdk-0.1.4.tgz#11877e327667b4026be2069e3241077f4fe14955"
+  integrity sha512-HHQzbX4if9CZLLH3KyNTSsOtcflatx73bRB8qabPItUNWUF64rSK3lQeP+Ls8zOzTOrJU64BsynH5QtD9KxECQ==
   dependencies:
     "@metaplex-foundation/js" "^0.18.1"
     "@orca-so/common-sdk" "^0.1.11"
