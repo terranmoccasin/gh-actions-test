@@ -30,3 +30,8 @@ jobs:
           SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
         run: |
           yarn build
+      - name: Publish NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_ACCESS_TOKEN }}
+          access: public
