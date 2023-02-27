@@ -7,8 +7,10 @@ name: Build
   workflow_dispatch:
 
 jobs:
-  build-docker:
+  build-tokenlist:
     runs-on: ubuntu-latest
+    env:
+      SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
     permissions:
       id-token: write
       contents: read
@@ -25,7 +27,5 @@ jobs:
         run: |
           yarn install
       - name: Build
-        env:
-          SOLANA_NETWORK: ${{ secrets.SOLANA_NETWORK }}
         run: |
-          SOLANA_NETWORK=${{ env.SOLANA_NETWORK }} yarn build
+          yarn build
