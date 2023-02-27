@@ -15,6 +15,9 @@ jobs:
       id-token: write
       contents: read
     steps:
+      - name: Secret Check
+        if: ${{ env.SOLANA_NETWORK != '' }}
+        run: echo 'solana_network has been set'
       - name: Checkout
         uses: actions/checkout@v2
         with:
